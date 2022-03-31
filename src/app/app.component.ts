@@ -60,6 +60,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    // Center of the united states
     const wktPoint = 'POINT(-102.96036309265152 42.34403599683588)'; 
     
     const wkt = new WKT();
@@ -69,7 +70,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
     const position = (geometry as Point).getCoordinates();
 
-    // MEGLIO NON FARLO PERCHE' RITORNA PIU DI UN TIPO 
+    // MEGLIO NON FARLO PERCHE' RITORNA PIU DI UN TIPO: number[], number[][] e number[][][] 
     // const pos = WktHelper.WktAsCoordinates(wktPoint, 'EPSG:4326', 'EPSG:3857');
 
 
