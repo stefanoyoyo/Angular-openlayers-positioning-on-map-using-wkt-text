@@ -6,7 +6,7 @@ import Polygon from "ol/geom/Polygon";
 
 export class WktHelper {
   
-  public WktAsCoordinates(wktWord, dataProjection, featureProjection) {
+  public WktAsCoordinates(wktWord:string, dataProjection:string, featureProjection:string) {
     const wkt = new WKT();
     const geometry = wkt.readGeometry(wktWord, {
       dataProjection: dataProjection,
@@ -25,14 +25,10 @@ export class WktHelper {
       return (geometry as Polygon).getCoordinates();
       break;
     }
-
   }
 
-getCoordinates(wktWord) {
 
-}
-
-getWktType(wktWord) {
+getWktType(wktWord: string) {
   const wktTypes = ['point', 'multipolygon', 'polygon' ];
   for (const word of wktTypes) {
     if (wktWord.toLowerCase().includes(word)) return word;
