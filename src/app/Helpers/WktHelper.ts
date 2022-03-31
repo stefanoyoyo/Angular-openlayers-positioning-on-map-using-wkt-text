@@ -6,6 +6,7 @@ import Polygon from "ol/geom/Polygon";
 
 export class WktHelper {
   
+  // #region WktAsCoordinates
   public WktAsCoordinates(wktWord:string, dataProjection:string, featureProjection:string) {
     const wkt = new WKT();
     const geometry = wkt.readGeometry(wktWord, {
@@ -35,5 +36,6 @@ getWktType(wktWord: string) {
   }
   return null;
 }
+// #endregion
 
 }
