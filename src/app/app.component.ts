@@ -10,6 +10,7 @@ import { Circle as CircleStyle, Fill, Stroke, Style } from "ol/style";
 import Overlay from "ol/Overlay";
 import { WKT } from "ol/format";
 import Point from "ol/geom/Point";
+import { WktHelper } from "./Helpers/WktHelper";
 
 @Component({
   selector: "my-app",
@@ -67,6 +68,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       featureProjection: 'EPSG:3857',
     });
     const position = (geometry as Point).getCoordinates();
+
+    // MEGLIO NON FARLO PERCHE' RITORNA PIU DI UN TIPO 
+    // const pos = WktHelper.WktAsCoordinates(wktPoint, 'EPSG:4326', 'EPSG:3857');
 
 
     const ov = new Overlay({
